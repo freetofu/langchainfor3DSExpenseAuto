@@ -68,6 +68,70 @@
             background: #34495E;
             color: #39D2B4;
         }
+
+        .preview {
+            max-height: 260px;
+            overflow: auto;
+            margin-top: 10px;
+        }
+
+        .preview table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+        }
+
+        .preview th,
+        .preview td {
+            border: 1px solid #d0d0d0;
+            padding: 4px 6px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .preview th {
+            background: #f4f6f8;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .preview .hosp-required {
+            background: #fff3bf;
+        }
+
+        .preview .empty-state {
+            color: #666;
+            font-size: 12px;
+            padding: 8px 0;
+            text-align: center;
+        }
+
+        .action-row {
+            display: flex;
+            justify-content: center;
+            padding: 8px 0 12px;
+        }
+
+        .action-row button {
+            background: #2ecc71;
+            border: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 6px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .action-row button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .action-row button:not(:disabled):hover {
+            background: #27ae60;
+        }
     </style>
 	<script src="scripts/jquery.min.js"></script>
 	<script src="scripts/xlsx.full.min.js"></script>
@@ -95,6 +159,23 @@
             </div>
         </div>
     </section>
+    <section class="preview" id="preview-section">
+        <div class="empty-state" id="preview-empty">엑셀을 선택하면 미리보기가 표시됩니다.</div>
+        <table id="preview-table" style="display: none;">
+            <thead>
+                <tr>
+                    <th>날짜</th>
+                    <th>사용처</th>
+                    <th>금액</th>
+                    <th>Expense Type</th>
+                </tr>
+            </thead>
+            <tbody id="preview-body"></tbody>
+        </table>
+    </section>
+    <div class="action-row">
+        <button id="start-input" disabled>자동 입력 시작</button>
+    </div>
 </body>
 
 </html>
