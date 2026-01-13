@@ -1,0 +1,52 @@
+{
+    "name": "Expense Util",
+    "description": "DSKorea Expense Util",
+    "version": "1.1.11",
+    "author": "Original Author :LEE,Chanyoung, Modifier HHN11",
+    "manifest_version": 3,
+    "icons": {
+        "16": "3ds.png",
+        "48": "3ds.png",
+        "128": "3ds.png"
+    },
+    "permissions": ["storage", "activeTab", "tabs", "scripting"],
+    "host_permissions": [
+	    "https://bitbucket.org/*",
+		"https://api.bitbucket.org/*",
+		"https://api.allorigins.win/*", 
+        "https://dsxfinance.dsone.3ds.com/*",
+        "https://expense.extranet.3ds.com/*"
+    ],
+    "background": {
+        "service_worker": "backgroundScript.js"
+    },
+    "content_scripts": [
+        {
+            "js": ["contentScript.js"],
+            "run_at": "document_end",
+            "matches": [
+                "https://dsxfinance.dsone.3ds.com/*",
+                "https://expense.extranet.3ds.com/*"
+            ]
+        }
+    ],
+    "web_accessible_resources": [{
+        "resources": [
+            "pageScript.js",
+            "scripts/jquery.min.js",
+            "scripts/xlsx.full.min.js"
+        ],
+        "matches": ["<all_urls>"]
+    }],
+    "action": {
+        "default_icon": {
+            "16": "3ds.png",
+            "48": "3ds.png",
+            "128": "3ds.png"
+        },
+        "default_popup": "popup.html"
+    },
+	"content_security_policy": {
+	  "extension_pages": "script-src 'self'; object-src 'self'; font-src 'self' data:;"
+	}
+}

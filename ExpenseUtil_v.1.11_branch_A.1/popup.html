@@ -1,0 +1,100 @@
+<meta charset="UTF-8">
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        body {
+            width: 450px;
+        }
+
+        section {
+            border: 1px solid gray;
+            border-radius: 5px;
+            padding: 0px 10px;
+        }
+
+        select {
+            background-color: #3498DB;
+            background-repeat: no-repeat;
+            background-position: right 10px top 15px;
+            background-size: 16px 16px;
+            color: #fff;
+            padding: 5px 21px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 3px;
+            border: 0;
+            outline: 0;
+            transition: 0.3s ease all;
+        }
+
+        select:hover {
+            background-color: #2980B9;
+        }
+
+        select:focus,
+        select:active {
+            border: 0;
+            outline: 0;
+        }
+
+        .file {
+            position: relative;
+        }
+
+        .file label {
+            background: rgb(236, 143, 36);
+            padding: 5px 30px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 12px;
+            transition: all .4s;
+            border-radius: 3px;
+        }
+
+        .file input {
+            position: absolute;
+            display: inline-block;
+            left: 0;
+            top: 0;
+            opacity: 0.01;
+            cursor: pointer;
+        }
+
+        .file input:hover+label,
+        .file input:focus+label {
+            background: #34495E;
+            color: #39D2B4;
+        }
+    </style>
+	<script src="scripts/jquery.min.js"></script>
+	<script src="scripts/xlsx.full.min.js"></script>
+    <script src="popupScript.js"></script>
+</head>
+
+<body>
+    <header>
+        <h2 id="eu-title" />
+    </header>
+    <section>
+        <p id="eu-release-notes" />
+    </section>
+    <section style="margin-top: 10px">
+        <div style="display: flex; gap: 10px; align-items: center; justify-content: center; padding: 10px 0;">
+            <select id="date-format">
+                <option value="1">YYYY-MM-DD</option>
+                <option value="2">MM/DD/YYYY</option>
+                <option value="3">DD/MM/YYYY</option>
+                <option value="4">YYYY/MM/DD</option>
+            </select>
+            <div class="file">
+                <input type="file" name="file" id="excel-file-selection" />
+                <label for="excel-file-selection">엑셀 파일 선택</label>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
