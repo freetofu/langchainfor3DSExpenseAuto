@@ -1,0 +1,262 @@
+{
+  "defaults": {
+    "paymentType": "AMEX/CASH",
+    "billingType": "CorpNonBillable",
+    "currency": "KRW",
+    "expenseTypeFallback": "Miscellaneous"
+  },
+  "rules": [
+    {
+      "expenseType": "Hosp. bfast with ext. guest",
+      "match": {
+        "categoryName": ["식당", "음식", "Food", "Restaurant"]
+      },
+      "amountRange": { "min": 10000 },
+      "timeRange": { "start": "06:00", "end": "10:59" }
+    },
+    {
+      "expenseType": "Hosp. lunch with ext. guest",
+      "match": {
+        "categoryName": ["식당", "음식", "Food", "Restaurant"]
+      },
+      "amountRange": { "min": 20000 },
+      "timeRange": { "start": "11:00", "end": "14:59" }
+    },
+    {
+      "expenseType": "Hosp. dinner with ext. guest",
+      "match": {
+        "categoryName": ["식당", "음식", "Food", "Restaurant"]
+      },
+      "amountRange": { "min": 30000 },
+      "timeRange": { "start": "18:00", "end": "22:59" }
+    },
+    {
+      "expenseType": "Over Time Meal",
+      "match": {
+        "categoryName": ["식당", "음식", "Food", "Restaurant"]
+      },
+      "amountRange": { "max": 20000 },
+      "timeRange": { "start": "18:00", "end": "22:59" }
+    },
+    {
+      "expenseType": "Dinner Indiv or Colleagues",
+      "match": {
+        "categoryName": ["식당", "음식", "Food", "Restaurant"]
+      },
+      "amountRange": { "max": 30000 },
+      "timeRange": { "start": "18:00", "end": "22:59" }
+    },
+    {
+      "expenseType": "Breakfast Indiv or Colleagues",
+      "match": {
+        "categoryName": ["식당", "음식", "Food", "Restaurant"]
+      },
+      "amountRange": { "max": 10000 },
+      "timeRange": { "start": "06:00", "end": "10:59" }
+    },
+    {
+      "expenseType": "Lunch Indiv or Colleagues",
+      "match": {
+        "categoryName": ["식당", "음식", "Food", "Restaurant"]
+      },
+      "amountRange": { "max": 20000 },
+      "timeRange": { "start": "11:00", "end": "14:59" }
+    },
+    {
+      "expenseType": "Hospitality Other",
+      "match": {
+        "usagePlace": ["커피", "카페", "술", "주점", "Bar", "Cafe"]
+      }
+    },
+    {
+      "expenseType": "Taxi",
+      "match": {
+        "usagePlace": ["택시", "Taxi"],
+        "categoryName": ["택시", "Taxi"]
+      }
+    },
+    {
+      "expenseType": "Hotel Room",
+      "match": {
+        "usagePlace": ["호텔", "Hotel"]
+      }
+    },
+    {
+      "expenseType": "Laundry",
+      "match": {
+        "usagePlace": ["세탁", "Laundry"]
+      }
+    },
+    {
+      "expenseType": "Conference Fees",
+      "match": {
+        "usagePlace": ["학술", "컨퍼런스", "Conference"]
+      }
+    },
+    {
+      "expenseType": "Airfare",
+      "match": {
+        "usagePlace": ["비행기", "항공", "Air", "Ticket"]
+      }
+    },
+    {
+      "expenseType": "Car Rental",
+      "match": {
+        "usagePlace": ["렌트", "렌터카", "Rental"]
+      }
+    },
+    {
+      "expenseType": "Parking",
+      "match": {
+        "usagePlace": ["주차비"]
+      }
+    },
+    {
+      "expenseType": "Parking Allowance",
+      "match": {
+        "usagePlace": ["정기주차"]
+      }
+    },
+    {
+      "expenseType": "Public transportation",
+      "match": {
+        "usagePlace": ["버스", "지하철", "교통", "Bus", "Metro"]
+      }
+    },
+    {
+      "expenseType": "Toll",
+      "match": {
+        "usagePlace": ["톨", "통행료", "Toll"]
+      }
+    },
+    {
+      "expenseType": "Train Ferry",
+      "match": {
+        "usagePlace": ["기차", "열차", "Train", "Ferry"]
+      }
+    },
+    {
+      "expenseType": "Fuel Gasoline",
+      "match": {
+        "usagePlace": ["주유", "Gasoline", "Fuel"]
+      }
+    },
+    {
+      "expenseType": "Car Maintenance",
+      "match": {
+        "usagePlace": ["정비", "Maintenance"]
+      }
+    },
+    {
+      "expenseType": "Internet",
+      "match": {
+        "usagePlace": ["인터넷", "Internet"]
+      }
+    },
+    {
+      "expenseType": "Office Supplies",
+      "match": {
+        "usagePlace": ["사무", "Office"]
+      }
+    },
+    {
+      "expenseType": "Postage",
+      "match": {
+        "usagePlace": ["우편", "Postage"]
+      }
+    },
+    {
+      "expenseType": "Subscription Membership",
+      "match": {
+        "usagePlace": ["구독", "Subscription", "Membership"]
+      }
+    },
+    {
+      "expenseType": "Telephone Mobile",
+      "match": {
+        "usagePlace": ["통신", "전화", "Mobile"]
+      }
+    },
+    {
+      "expenseType": "Special Circumstances Gifts",
+      "match": {
+        "usagePlace": ["특별", "Special"]
+      }
+    },
+    {
+      "expenseType": "External guest gift",
+      "match": {
+        "usagePlace": ["선물", "Gift"]
+      }
+    },
+    {
+      "expenseType": "Gifts Approved by HR",
+      "match": {
+        "usagePlace": ["HR", "인사"]
+      }
+    },
+    {
+      "expenseType": "COVID Travel Test Fee",
+      "match": {
+        "usagePlace": ["COVID", "PCR", "검사"]
+      }
+    },
+    {
+      "expenseType": "Travel Service Fees",
+      "match": {
+        "usagePlace": ["여행", "서비스", "Service Fee"]
+      }
+    },
+    {
+      "expenseType": "Visa Customs Fees",
+      "match": {
+        "usagePlace": ["비자", "세관", "Visa", "Customs"]
+      }
+    },
+    {
+      "expenseType": "Bank Charge Fees",
+      "match": {
+        "usagePlace": ["은행", "Bank", "수수료"]
+      }
+    },
+    {
+      "expenseType": "KM Mileage",
+      "match": {
+        "usagePlace": ["마일리지", "Mileage"]
+      }
+    },
+    {
+      "expenseType": "Training",
+      "match": {
+        "usagePlace": ["교육", "Training"]
+      }
+    },
+    {
+      "expenseType": "Team Event Breakfast",
+      "match": {
+        "usagePlace": ["팀", "Team"]
+      },
+      "timeRange": { "start": "06:00", "end": "10:59" }
+    },
+    {
+      "expenseType": "Team Event Lunch",
+      "match": {
+        "usagePlace": ["팀", "Team"]
+      },
+      "timeRange": { "start": "11:00", "end": "14:59" }
+    },
+    {
+      "expenseType": "Team Event Dinner",
+      "match": {
+        "usagePlace": ["팀", "Team"]
+      },
+      "timeRange": { "start": "18:00", "end": "22:59" }
+    },
+    {
+      "expenseType": "Other Team Spend",
+      "match": {
+        "usagePlace": ["팀", "Team"]
+      }
+    }
+  ]
+}
